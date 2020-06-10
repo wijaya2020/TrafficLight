@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,8 +29,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void StartGame(View v){
+
         Intent it = new Intent();
         it.setClass(this, GameActivity.class);
+
+        EditText edtGreen = (EditText) findViewById(R.id.editTextGreen);
+        it.putExtra("GreenSec", Integer.valueOf(edtGreen.getText().toString()));
+
+        EditText edtYellow = (EditText) findViewById(R.id.editTextYellow);
+        it.putExtra("YellowSec", Integer.valueOf(edtYellow.getText().toString()));
+
+        EditText edtRed = (EditText) findViewById(R.id.editTextRed);
+        it.putExtra("RedSec", Integer.valueOf(edtRed.getText().toString()));
+
         startActivity(it);
         finish();
     }
