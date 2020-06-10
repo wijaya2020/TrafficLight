@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl1"
         android:layout_width="wrap_content"
@@ -53,5 +54,49 @@
         app:layout_constraintBottom_toTopOf="@+id/gl2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnStart" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <EditText
+        android:id="@+id/editTextGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="綠燈秒數"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/gl3"
+        app:layout_constraintEnd_toStartOf="@id/editTextYellow"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+
+        android:hint="黃燈秒數"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/gl3"
+        app:layout_constraintEnd_toStartOf="@id/editTextRed"
+        app:layout_constraintStart_toEndOf="@id/editTextGreen" />
+
+    <EditText
+        android:id="@+id/editTextRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="紅燈秒數"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/gl3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editTextYellow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
